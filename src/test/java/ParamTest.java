@@ -27,20 +27,17 @@ public class ParamTest {
     }
 
     @Parameterized.Parameters
-    public static Collection<Object[]> data() {
-        Object[][] data = new Object[][]{
+    public static Object[][] data() {
+        return new Object[][]{
                 {"Lesia", "123"},
                 {"Masha", "345"},
                 {"Dima", "678"},
         };
-        return Arrays.asList(data);
     }
 
     @Test
     public void enterLogin() {
-        String log = login;
-        String pas = pass;
-        loginPage.loginMetod(log, pas);
+         loginPage.loginMetod(login, pass);
         Assert.assertEquals("Неверный логин или пароль.", loginPage.getError());
     }
 
