@@ -1,4 +1,5 @@
 import Utilites.Driver;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -43,5 +44,9 @@ public class ParamTest {
         Assert.assertEquals("Неверный логин или пароль.", loginPage.getError());
     }
 
+    @After
+    public void tearDown() {
+        Driver.close();
+    }
 
 }
